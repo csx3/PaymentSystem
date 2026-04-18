@@ -1,11 +1,14 @@
 public class Main {
     public static void main(String[] args) {
+        PaymentMethod[] paymentMethods = {
+                new CreditCardPayment(),
+                new PayPalPayment()
+        };
         PaymentService paymentService = new PaymentService();
 
-        PaymentMethod creditCardPayment = new CreditCardPayment();
-        PaymentMethod payPalPayment = new PayPalPayment();
-
-        paymentService.processPayment(creditCardPayment, 1500);
-        paymentService.processPayment(payPalPayment, 750);
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            PaymentFrame frame = new PaymentFrame(paymentService, paymentMethods);
+            frame.setVisible(true);
+        });
     }
 }

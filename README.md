@@ -1,21 +1,35 @@
+# Payment Management
 
-## Uygulanan Yapi
+Bu proje, Java Swing ile hazirlanmis basit bir odeme ekrani uygulamasidir.
+Kullanici odeme yontemini secer, tutari girer ve "Odeme Yap" butonuna basarak sonucu ekranda gorur.
 
-- `PaymentMethod` arayuzu tum odeme yontemleri icin ortak kontrati tanimlar.
-- `CreditCardPayment` mevcut odeme yontemini temsil eder.
-- `PayPalPayment` sisteme yeni eklenen odeme yontemidir.
-- `PaymentService`, odeme akisini yonetir.
+## Yapi
 
-## SOLID Yaklasimi
+- `PaymentMethod` tum odeme yontemleri icin ortak arayuzdur.
+- `CreditCardPayment` mevcut odeme yontemidir.
+- `PayPalPayment` yeni eklenen odeme yontemidir.
+- `PaymentService` odeme islemini baslatir.
+- `PaymentFrame` Swing arayuzunu yonetir.
+- `Main` uygulamayi baslatir.
 
-### Open/Closed Principle
+## SOLID
 
-Yeni bir odeme yontemi eklemek icin mevcut akisi degistirmeden `PaymentMethod` arayuzunu implemente eden yeni bir sinif yazmak yeterlidir.
+- `Open/Closed Principle`: Yeni odeme yontemi icin sadece `PaymentMethod` implemente eden yeni bir sinif eklenir.
+- `Single Responsibility Principle`: Her sinif tek bir goreve odaklanir.
 
-### Single Responsibility Principle
+## Calistirma
 
-- `PaymentService` sadece odeme akisini yonetir.
-- Her odeme sinifi sadece kendi odeme davranisindan sorumludur.
+```bash
+javac -d out src/*.java
+java -cp out Main
+```
 
+## Ornek Akis
 
+1. Kullanici odeme yontemini acilir listeden secer.
+2. Kullanici tutari metin alanina girer.
+3. "Odeme Yap" butonuna basilir.
+4. Sistem odemeyi yapip sonucu pencere uzerinde gosterir.
 
+![Uygulama Ekrani](image1.png)
+![Uygulama Ekrani](image2.png)

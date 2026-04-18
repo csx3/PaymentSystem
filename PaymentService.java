@@ -1,5 +1,5 @@
 public class PaymentService {
-    public void processPayment(PaymentMethod paymentMethod, double amount) {
-        paymentMethod.pay(amount);
+    public String processPayment(PaymentMethod paymentMethod, double amount) {
+        return paymentMethod.pay(amount);
     }
 }

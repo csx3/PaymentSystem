@@ -1,6 +1,11 @@
 public class PayPalPayment implements PaymentMethod {
     @Override
-    public void pay(double amount) {
-        System.out.println("PayPal ile " + amount + " TL odeme alindi.");
+    public String getName() {
+        return "PayPal";
+    }
+
+    @Override
+    public String pay(double amount) {
+        return amount + " TL PayPal ile odeme yapildi.";
     }
 }

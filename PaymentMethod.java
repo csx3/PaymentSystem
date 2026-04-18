@@ -1,3 +1,5 @@
 public interface PaymentMethod {
-    void pay(double amount);
+    String getName();
+
+    String pay(double amount);
 }
